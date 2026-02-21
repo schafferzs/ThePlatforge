@@ -1,0 +1,14 @@
+site_name: The Platforge
+theme:
+  name: zensical
+
+features:
+  - navigation.tabs       # Top level tabs
+  - navigation.sections   # Grouped sidebar
+  - search.highlight      # Highlighted search experience
+
+nav:
+  - Home: index.md
+  - Roadmap: roadmap.md
+  - Cheat Sheets:
+    - Git Basics: cheatsheets/git-basics.md
