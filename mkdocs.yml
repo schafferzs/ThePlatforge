@@ -1,11 +1,47 @@
 site_name: The Platforge
 theme:
-  name: zensical
+  name: material
+  icon:
+    logo: material/book-open-page-variant
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: deep purple
+      toggle:
+        icon: lucide/sun
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: deep purple
+      toggle:
+        icon: lucide/moon
+        name: Switch to light mode
+
+  font:
+    text: Roboto
+    code: Roboto Mono
 
 features:
-  - navigation.tabs       # Top level tabs
-  - navigation.sections   # Grouped sidebar
-  - search.highlight      # Highlighted search experience
+  - announce.dismiss
+  - navigation.tabs
+  - navigation.top
+  - navigation.instant
+  - navigation.indexes
+  - navigation.path
+  - navigation.footer
+  - toc.follow
+  - content.tabs.link
+  - search.share
+  - search.highlight
+  - search.suggest
+  - content.code.copy
+  - content.tabs.link
+  - content.code.annotations
 
 nav:
   - Home: index.md
