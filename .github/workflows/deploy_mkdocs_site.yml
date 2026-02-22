@@ -1,0 +1,47 @@
+name: Deploy ThePlatforge docs website
+on:
+  push:
+    branches:
+      - main  # Trigger on every push to the main branch (production)
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  #id-token: write
+
+jobs:
+# Build Job
+  build_site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+      
+      - name: Install Zensical / mkdocs
+        run: pip install zensical
+      
+      - name: Build docs webpage
+        run: zensical build
+
+      - name: Upload built files as artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./site
+
+ # Deployment Job
+  deploy_site:
+    environment: 
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }} 
+    runs-on: ubuntu-latest
+    needs: build_site
+    steps:
+      - name:  Deploy docs to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
