@@ -1,0 +1,11 @@
+[project]
+site_name = "The PlatForge"
+docs_dir = "docs"
+site_dir = "site"
+
+[project.theme]
+variant = "classic"
+
+[project.theme.palette]
+scheme = "dark mode"
+
