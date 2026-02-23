@@ -6,8 +6,8 @@ on:
 
 # Global variables
 env:
-  CONFIG_PATH:  ".zensical/zensical.toml"
-  BUILD_OUTPUT: "site"
+  CONFIG_PATH:  "zensical/zensical.toml"
+  BUILD_OUTPUT: "zensical/site"
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
